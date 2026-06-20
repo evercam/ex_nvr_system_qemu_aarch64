@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — ex_nvr fork
+
+Renamed from `nerves_system_qemu_aarch64` to `ex_nvr_system_qemu_aarch64` (the
+`ex_nvr_system_*` convention used by `evercam/ex_nvr_system_rpi4`) so ex_nvr
+firmware can target a QEMU VM for experiments. Forked from upstream v0.3.5
+below; no system changes yet.
+
 ## v0.3.5
 
 This is a security and bug fix release.

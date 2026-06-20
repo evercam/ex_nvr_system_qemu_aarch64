@@ -1,8 +1,8 @@
-defmodule NervesSystemQemuAarch64.MixProject do
+defmodule ExNvrSystemQemuAarch64.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
-  @app :nerves_system_qemu_aarch64
+  @github_organization "lawik"
+  @app :ex_nvr_system_qemu_aarch64
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -70,7 +70,7 @@ defmodule NervesSystemQemuAarch64.MixProject do
   end
 
   defp description do
-    "Nerves System - Qemu ARM64"
+    "ex_nvr Nerves System - Qemu ARM64"
   end
 
   defp docs do
@@ -91,7 +91,7 @@ defmodule NervesSystemQemuAarch64.MixProject do
       links: %{
         "GitHub" => @source_url,
         "REUSE Compliance" =>
-          "https://api.reuse.software/info/github.com/nerves-project/nerves_system_qemu_aarch64"
+          "https://api.reuse.software/info/github.com/lawik/ex_nvr_system_qemu_aarch64"
       }
     ]
   end
