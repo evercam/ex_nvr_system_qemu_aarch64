@@ -22,6 +22,19 @@ Ported the ex_nvr OS-level dependencies from `evercam/ex_nvr_system_rpi4`
 Skipped the RPi-only bits (mesa/v3d, rpi-firmware, pigpio, USB-gadget RNDIS,
 HDMI `libdisplay-info`) and the PREEMPT_RT→PREEMPT kernel tweak.
 
+Resilience / fault-injection testing (from upstream `nerves_system_qemu_aarch64`):
+
+* `mix nerves.gen.qemu` gained options for driving the VM from the outside:
+  `--qmp`, `--serial`, `--data-disk`, `--ram`, `--smp` and `--accel`. A
+  `virtio-balloon` device is now always included and the primary drive uses a
+  stable id so QMP `block_set_io_throttle` can address it at runtime. Default
+  output is unchanged.
+* Added `examples/resilience_testing`, an example firmware with a QEMU-driven
+  fault-injection test suite (disk latency/errors/corruption, sudden power
+  loss, network latency). The guest is controlled over an Erlang `:peer` RPC
+  channel that rides the serial console via `peer_bridge`. See
+  `examples/resilience_testing/README.md`.
+
 ## v0.3.5
 
 This is a security and bug fix release.
