@@ -4,8 +4,23 @@
 
 Renamed from `nerves_system_qemu_aarch64` to `ex_nvr_system_qemu_aarch64` (the
 `ex_nvr_system_*` convention used by `evercam/ex_nvr_system_rpi4`) so ex_nvr
-firmware can target a QEMU VM for experiments. Forked from upstream v0.3.5
-below; no system changes yet.
+firmware can target a QEMU VM for experiments. Forked from upstream v0.3.5 below.
+
+Ported the ex_nvr OS-level dependencies from `evercam/ex_nvr_system_rpi4`
+(diffed against base `nerves_system_rpi4`) so ex_nvr can run here:
+
+* Packages: `e2fsprogs` (+host), `gptfdisk`/`sgdisk`, `lvm2`, `smartmontools`,
+  `kmod`, `util-linux` (binaries + mount), `libsrtp`, `liburcu`, `inih`,
+  `nginx` (+http cache), `socat`, plus the shared busybox config fragment.
+* Kernel: `EXT4_FS` (+ACL/security), device-mapper (`MD`, `BLK_DEV_DM`) for
+  LVM, and `LIBCRC32C`.
+* Build: pinned `nerves_system_br` to `1.33.0` to match the evercam ex_nvr
+  fleet (rpi4/rpi5) — all systems in one firmware project must share it (down
+  from the upstream qemu system's 1.33.9; both are OTP 28, and `little_loader`
+  is provided by this system, not by nerves_system_br).
+
+Skipped the RPi-only bits (mesa/v3d, rpi-firmware, pigpio, USB-gadget RNDIS,
+HDMI `libdisplay-info`) and the PREEMPT_RT→PREEMPT kernel tweak.
 
 ## v0.3.5
 
