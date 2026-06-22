@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased — ex_nvr fork
+## v0.3.8
+
+First published release of the ex_nvr fork. (Tags v0.3.6 and v0.3.7 were
+release-pipeline iterations that never shipped; their fixes are folded in here.)
 
 Renamed from `nerves_system_qemu_aarch64` to `ex_nvr_system_qemu_aarch64` (the
 `ex_nvr_system_*` convention used by `evercam/ex_nvr_system_rpi4`) so ex_nvr
@@ -34,6 +37,17 @@ Resilience / fault-injection testing (from upstream `nerves_system_qemu_aarch64`
   loss, network latency). The guest is controlled over an Erlang `:peer` RPC
   channel that rides the serial console via `peer_bridge`. See
   `examples/resilience_testing/README.md`.
+
+Packaging and release tooling:
+
+* Pointed package metadata at the `evercam` GitHub organization — the Hex
+  source links and the `:github_releases` artifact provider now resolve against
+  `evercam/ex_nvr_system_qemu_aarch64`.
+* Added REUSE/SPDX licensing annotations so the project passes the REUSE
+  compliance check, covering `busybox_defconfig` and the
+  `examples/resilience_testing` app (example sources are Apache-2.0, © Evercam).
+* Fixed CI release-notes generation so tagged builds deploy: the changelog now
+  carries a versioned `vX.Y.Z` heading for the release job to extract.
 
 ## v0.3.5
 
