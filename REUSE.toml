@@ -6,6 +6,7 @@ path = [
  ".github/CODEOWNERS",
  ".gitignore",
  "CHANGELOG.md",
+ "busybox_defconfig",
  "nerves_defconfig",
  "NOTICE",
  "REUSE.toml",
@@ -23,6 +24,14 @@ path = [
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 Lars Wikman"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = [
+ "examples/resilience_testing/README.md"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Evercam"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 # Buildroot derived or related files
@@ -69,6 +78,32 @@ path = [
  "rootfs_overlay/etc/erlinit.config",
  "rootfs_overlay/etc/fw_env.config",
  "rootfs_overlay/etc/sysctl.conf"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "None"
+SPDX-License-Identifier = "CC0-1.0"
+
+# Example app source code and scripts
+[[annotations]]
+path = [
+ "examples/resilience_testing/bin/**",
+ "examples/resilience_testing/lib/**",
+ "examples/resilience_testing/test/**"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Evercam"
+SPDX-License-Identifier = "Apache-2.0"
+
+# Example app config and boilerplate files
+[[annotations]]
+path = [
+ "examples/resilience_testing/.formatter.exs",
+ "examples/resilience_testing/.gitignore",
+ "examples/resilience_testing/config/**",
+ "examples/resilience_testing/mix.exs",
+ "examples/resilience_testing/mix.lock",
+ "examples/resilience_testing/rel/vm.args.eex",
+ "examples/resilience_testing/rootfs_overlay/etc/iex.exs"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "None"
