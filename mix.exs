@@ -1,7 +1,7 @@
 defmodule ExNvrSystemQemuAarch64.MixProject do
   use Mix.Project
 
-  @github_organization "lawik"
+  @github_organization "evercam"
   @app :ex_nvr_system_qemu_aarch64
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
@@ -91,7 +91,7 @@ defmodule ExNvrSystemQemuAarch64.MixProject do
       links: %{
         "GitHub" => @source_url,
         "REUSE Compliance" =>
-          "https://api.reuse.software/info/github.com/lawik/ex_nvr_system_qemu_aarch64"
+          "https://api.reuse.software/info/github.com/#{@github_organization}/#{@app}"
       }
     ]
   end
