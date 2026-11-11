@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.9
+
+Bump `nerves_system_br` to match the evercam ex_nvr fleet again
+(`ex_nvr_system_rpi4` v1.33.1 / `ex_nvr_system_rpi5` v0.8.1). All systems in
+one firmware project must share the same `nerves_system_br`, so v0.3.8 could no
+longer be resolved alongside them.
+
+* Package updates
+  * [nerves_system_br 1.33.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.33.2)
+    * [Erlang/OTP 28.3.1](https://erlang.org/download/OTP-28.3.1.README.md)
+    * [Buildroot 2025.11.1](https://lore.kernel.org/buildroot/f6496994-b279-46f4-b554-7dbe2df92782@rnout.be/T/)
+
 ## v0.3.8
 
 First published release of the ex_nvr fork. (Tags v0.3.6 and v0.3.7 were
